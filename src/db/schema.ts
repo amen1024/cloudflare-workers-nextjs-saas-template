@@ -301,13 +301,15 @@ export const teamMembershipRelations = relations(teamMembershipTable, ({ one }) 
     references: [teamTable.id],
   }),
   user: one(userTable, {
+    relationName: 'team_membership_user',
     fields: [teamMembershipTable.userId],
     references: [userTable.id],
   }),
   invitedByUser: one(userTable, {
+    relationName: 'team_membership_invited_by',
     fields: [teamMembershipTable.invitedBy],
     references: [userTable.id],
-  }),
+  })
 }));
 
 export const teamInvitationRelations = relations(teamInvitationTable, ({ one }) => ({
@@ -316,10 +318,12 @@ export const teamInvitationRelations = relations(teamInvitationTable, ({ one }) 
     references: [teamTable.id],
   }),
   invitedByUser: one(userTable, {
+    relationName: 'team_invitation_invited_by',
     fields: [teamInvitationTable.invitedBy],
     references: [userTable.id],
   }),
   acceptedByUser: one(userTable, {
+    relationName: 'team_invitation_accepted_by',
     fields: [teamInvitationTable.acceptedBy],
     references: [userTable.id],
   }),
@@ -343,7 +347,9 @@ export const userRelations = relations(userTable, ({ many }) => ({
   passkeys: many(passKeyCredentialTable),
   creditTransactions: many(creditTransactionTable),
   purchasedItems: many(purchasedItemsTable),
-  teamMemberships: many(teamMembershipTable),
+  teamMemberships: many(teamMembershipTable,{
+    relationName: 'team_membership_user',
+  }),
 }));
 
 export const passKeyCredentialRelations = relations(passKeyCredentialTable, ({ one }) => ({

@@ -4,7 +4,7 @@
  */
  {
     "$schema": "node_modules/wrangler/config-schema.json",
-    "account_id": "82e5aa3e06eba55221231ef482269452",
+    "account_id": "446e9fed1d43fd586a45c3d6e16fbd6f",
     "name": "cloudflare-workers-nextjs-saas-template",
     "main": ".open-next/worker.js",
     "compatibility_date": "2025-03-01",
@@ -78,15 +78,15 @@
     "d1_databases": [
         {
             "binding": "NEXT_TAG_CACHE_D1",
-            "database_name": "cloudflare-workers-nextjs-saas",
-            "database_id": "94dd1269-a29c-4621-adff-1762d1af6926",
+            "database_name": "db_test01",
+            "database_id": "78f70d6b-b5e2-400a-8ebc-120d5431c2d7",
             "migrations_dir": "src/db/migrations"
         }
     ],
     "kv_namespaces": [
         {
             "binding": "NEXT_INC_CACHE_KV",
-            "id": "c6f2b077e0a34a84b3598558eb833055"
+            "id": "22e5fd469dec4369846c0f248e1c882f"
         }
     ]
   }

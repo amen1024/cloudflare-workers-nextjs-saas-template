@@ -1,0 +1,8 @@
+ignoredBuiltDependencies:
+  - '@heroui/shared-utils'
+  - esbuild
+  - sharp
+  - unrs-resolver
+  - workerd
+onlyBuiltDependencies:
+  - better-sqlite3
